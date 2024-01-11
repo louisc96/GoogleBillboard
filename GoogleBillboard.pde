@@ -12,7 +12,7 @@ public void draw()
 public String tenDigits(String str) {
   String ten = "";
   for (int i = 0; i < str.length() - 10; i++) {
-    String digits = str.substring(i, i+11);
+    String digits = str.substring(i, i+10);
     double dNum = Double.parseDouble(digits);
     if (isPrime(dNum) == true) {
       ten = digits;
