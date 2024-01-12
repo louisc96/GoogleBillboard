@@ -9,24 +9,25 @@ public void draw()
 {
   //not needed for this assignment
 }
-public String tenDigits(String str) {
-  String ten = "";
-  for (int i = 0; i < str.length() - 10; i++) {
+public double tenDigits(String str) {
+  double ten = 0;
+  for (int i = 2; i < str.length() - 10; i++) {
     String digits = str.substring(i, i+10);
     double dNum = Double.parseDouble(digits);
     if (isPrime(dNum) == true) {
-      ten = digits;
-      break;
+      return dNum;
     }
   }
-  return(ten);
+  return ten;
 }
 public boolean isPrime(double dNum)
 {
   if (dNum < 2)
     return false;
-  for (int i = 2; i <= Math.sqrt(dNum); i++)
-    if (dNum % i == 0)
-      return false;
+  else {
+    for (int i = 2; i <= Math.sqrt(dNum); i++)
+      if (dNum % i == 0)
+        return false;
+  }
   return true;
 }
